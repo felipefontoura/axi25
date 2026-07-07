@@ -1,5 +1,5 @@
 <!--
-  Context file for the primary harness: Claude Code — including the ObsidiBot / BojuBot
+  Context file for the primary harness: Claude Code — including the AXI25
   Obsidian wrapper, which reads CLAUDE.md as its context file. The full constitution lives
   in AGENTS.md (one source of truth for every harness); the @import below pulls it in.
 -->

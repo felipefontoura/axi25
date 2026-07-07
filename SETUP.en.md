@@ -16,21 +16,21 @@ plugin walks you through it — no terminal knowledge required.
 1. **Install Obsidian** (free) from <https://obsidian.md>. Open it and choose
    **"Open folder as vault"** → select your AXI25 folder (the one you extracted).
 2. Obsidian will ask whether you trust the vault and can enable community plugins — **allow it**.
-   The AI panel (**BojuBot**) **is already bundled and pre-configured** in the vault; allowing
+   The AI panel (**AXI25**) **is already bundled and pre-configured** in the vault; allowing
    plugins enables it automatically. (Nothing to install from the store.)
-3. Open the BojuBot panel (sidebar icon or command palette → "BojuBot"). On first run it shows a
+3. Open the AXI25 panel (sidebar icon or command palette → "AXI25"). On first run it shows a
    **wizard**:
    - **"Install Claude Code" step** — it shows a command with a **copy** button. Paste it where it
      asks (it opens the right place for you). This is the only command in the whole setup.
    - **Sign-in step** — opens your browser to log in with your **Claude account (Pro or Max)**.
-4. Done. In the BojuBot chat, say hi (or type anything). In a fresh vault that kicks off the guided
+4. Done. In the AXI25 chat, say hi (or type anything). In a fresh vault that kicks off the guided
    run, and it takes you through the rest. The skills are pre-wired as commands (type `/` in the
    chat to see them).
 
 > Automatic backup (optional): install the **Git** community plugin to version your vault with one click.
 
 > **Why "Claude Code"?** The Obsidian AI panel runs on top of Claude Code (Anthropic's command-line
-> engine), which accepts your Pro/Max subscription login. The ObsidiBot wizard installs and connects
+> engine), which accepts your Pro/Max subscription login. The AXI25 wizard installs and connects
 > it for you — as close to "no terminal" as it gets.
 
 Nothing else needs configuring: the folders, the skills, and `CLAUDE.md` all ship ready.
@@ -93,10 +93,10 @@ All read `AGENTS.md` (the constitution). Go deeper in **[`docs/`](docs/)** (phil
 
 ## Troubleshooting
 
-- **ObsidiBot says it can't find Claude** → you haven't finished its wizard (step 5). Run the
+- **AXI25 says it can't find Claude** → you haven't finished its wizard (step 5). Run the
   "Install Claude Code" command it shows and sign in. It uses that same binary.
 - **A subscription is required** → the Claude Code login needs a **Claude Pro or Max** account.
-- **Skills don't show as commands in Obsidian** → in Settings → ObsidiBot, confirm the skills folder
+- **Skills don't show as commands in Obsidian** → in Settings → AXI25, confirm the skills folder
   (`commandsFolder`) points to `.agents/skills` and "Register skills as commands" is on (it ships
   that way).
 - **I said hi and nothing happened** → make sure you opened the *folder* as a vault (not a single

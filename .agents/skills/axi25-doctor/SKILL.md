@@ -39,7 +39,7 @@ and — with a clear yes — install it for them, showing every command you run.
 | A running AI agent (Claude Code / Codex / OpenCode / Pi) | operating the vault at all | **yes** (this is already running if you're reading this) |
 | A text editor / Obsidian | reading & editing notes | recommended (Obsidian for the friendly path) |
 | **git** | version history + backup of your vault | strongly recommended |
-| **Node.js + npm** | installing the AI-agent CLIs and the Obsidian ObsidiBot wrapper | only for those paths |
+| **Node.js + npm** | installing the AI-agent CLIs and the Obsidian AXI25 wrapper | only for those paths |
 | Python / uv, ffmpeg, ML models | NOT used in this edition (reserved for Pro add-on skills) | no |
 
 The core vault is plain Markdown — it runs with just an agent and an editor. Everything else
@@ -93,7 +93,7 @@ then run it on a yes. Reference commands (adapt to the detected manager):
 - Fedora: `sudo dnf install -y git` · Arch: `sudo pacman -S --noconfirm git`
 - Windows: `winget install --id Git.Git -e`
 
-**Node.js + npm** (for the agent CLIs / ObsidiBot)
+**Node.js + npm** (for the agent CLIs / AXI25)
 
 - macOS: `brew install node`
 - Debian/Ubuntu: `sudo apt-get install -y nodejs npm` (or nvm for a current version)
@@ -109,7 +109,7 @@ then run it on a yes. Reference commands (adapt to the detected manager):
 - Pi.dev: see https://pi.dev
 
 **Obsidian** (friendly path): guide the download from https://obsidian.md (GUI app — you
-can't install it silently everywhere; walk them through it). Then the ObsidiBot plugin is
+can't install it silently everywhere; walk them through it). Then the AXI25 plugin is
 installed via BRAT inside Obsidian (see `SETUP.md`).
 
 After each install, **verify**: re-run `command -v <tool>` / `<tool> --version` and confirm.

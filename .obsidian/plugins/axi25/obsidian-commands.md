@@ -1,5 +1,5 @@
 # Obsidian Command Reference
-_Generated: 2026-06-26T11:12:37.004Z_
+_Generated: 2026-07-07T19:19:28.243Z_
 _Grep by plugin name or display name to find the right command ID for run-command._
 
 ## app
@@ -32,6 +32,26 @@ _Grep by plugin name or display name to find the right command ID for run-comman
 - `bases:copy-table` — Bases: Copy table to clipboard
 - `bases:insert` — Bases: Insert new base
 - `bases:new-file` — Bases: Create new base
+
+## bojubot
+- `bojubot:audit-memory-file` — AXI25: Audit memory file
+- `bojubot:change-permission-mode` — AXI25: Change permission mode
+- `bojubot:clear-session` — AXI25: Clear current session
+- `bojubot:copy-last-response` — AXI25: Copy last response
+- `bojubot:export-conversation` — AXI25: Export conversation
+- `bojubot:export-to-vault` — AXI25: Export session to vault
+- `bojubot:focus-input` — AXI25: Focus chat input
+- `bojubot:new-session` — AXI25: New session
+- `bojubot:open-agent` — AXI25: Open agent panel
+- `bojubot:open-context-file` — AXI25: Open context file
+- `bojubot:open-settings` — AXI25: Open settings
+- `bojubot:refresh-context` — AXI25: Refresh session context
+- `bojubot:reload-skills` — AXI25: Reload skills
+- `bojubot:send-selection` — AXI25: Send selection as context
+- `bojubot:show-about` — AXI25: About
+- `bojubot:show-session-history` — AXI25: Show session history
+- `bojubot:switch-model` — AXI25: Switch model
+- `bojubot:toggle-panel` — AXI25: Toggle panel
 
 ## bookmarks
 - `bookmarks:bookmark-all-tabs` — Bookmarks: Bookmark all tabs...
@@ -174,83 +194,6 @@ _Grep by plugin name or display name to find the right command ID for run-comman
 - `note-composer:merge-file` — Note composer: Merge current file with another file...
 - `note-composer:split-file` — Note composer: Extract current selection...
 
-## obsidian-git
-- `obsidian-git:add-to-gitignore` — Git: Add file to .gitignore
-- `obsidian-git:backup-and-close` — Git: Commit-and-sync and then close Obsidian
-- `obsidian-git:clone-repo` — Git: Clone an existing remote repo
-- `obsidian-git:commit` — Git: Commit all changes
-- `obsidian-git:commit-amend-staged-specified-message` — Git: Amend staged
-- `obsidian-git:commit-push-specified-message` — Git: Commit-and-sync with specific message
-- `obsidian-git:commit-smart` — Git: Commit
-- `obsidian-git:commit-smart-specified-message` — Git: Commit with specific message
-- `obsidian-git:commit-specified-message` — Git: Commit all changes with specific message
-- `obsidian-git:commit-staged` — Git: Commit staged
-- `obsidian-git:commit-staged-specified-message` — Git: Commit staged with specific message
-- `obsidian-git:create-branch` — Git: Create new branch
-- `obsidian-git:delete-branch` — Git: Delete branch
-- `obsidian-git:delete-repo` — Git: CAUTION: Delete repository
-- `obsidian-git:discard-all` — Git: CAUTION: Discard all changes
-- `obsidian-git:edit-gitignore` — Git: Edit .gitignore
-- `obsidian-git:edit-remotes` — Git: Edit remotes
-- `obsidian-git:fetch` — Git: Fetch
-- `obsidian-git:init-repo` — Git: Initialize a new repo
-- `obsidian-git:list-changed-files` — Git: List changed files
-- `obsidian-git:next-hunk` — Git: Go to next hunk
-- `obsidian-git:open-diff-view` — Git: Open diff view
-- `obsidian-git:open-git-view` — Git: Open source control view
-- `obsidian-git:open-history-view` — Git: Open history view
-- `obsidian-git:pause-automatic-routines` — Git: Pause/Resume automatic routines
-- `obsidian-git:prev-hunk` — Git: Go to previous hunk
-- `obsidian-git:preview-hunk` — Git: Preview hunk
-- `obsidian-git:pull` — Git: Pull
-- `obsidian-git:push` — Git: Commit-and-sync
-- `obsidian-git:push2` — Git: Push
-- `obsidian-git:raw-command` — Git: Raw command
-- `obsidian-git:remove-remote` — Git: Remove remote
-- `obsidian-git:reset-hunk` — Git: Reset hunk
-- `obsidian-git:set-upstream-branch` — Git: Set upstream branch
-- `obsidian-git:stage-current-file` — Git: Stage current file
-- `obsidian-git:stage-hunk` — Git: Stage hunk
-- `obsidian-git:switch-branch` — Git: Switch branch
-- `obsidian-git:switch-to-remote-branch` — Git: Switch to remote branch
-- `obsidian-git:toggle-line-author-info` — Git: Toggle line author information
-- `obsidian-git:unstage-current-file` — Git: Unstage current file
-- `obsidian-git:view-file-on-github` — Git: Open file on GitHub
-- `obsidian-git:view-history-on-github` — Git: Open file history on GitHub
-
-## obsidian42-brat
-- `obsidian42-brat:AddBetaPlugin` — BRAT: Plugins: Add a beta plugin for testing (with or without version)
-- `obsidian42-brat:allCommands` — BRAT: All Commands list
-- `obsidian42-brat:checkForUpdatesAndDontUpdate` — BRAT: Plugins: Only check for updates to beta plugins, but don't Update
-- `obsidian42-brat:checkForUpdatesAndUpdate` — BRAT: Plugins: Check for updates to all beta plugins and UPDATE
-- `obsidian42-brat:disablePlugin` — BRAT: Plugins: Disable a plugin - toggle it off
-- `obsidian42-brat:enablePlugin` — BRAT: Plugins: Enable a plugin - toggle it on
-- `obsidian42-brat:GrabBetaTheme` — BRAT: Themes: Grab a beta theme for testing from a Github repository
-- `obsidian42-brat:openGitHubRepoTheme` — BRAT: Themes: Open the GitHub repository for a theme (appearance)
-- `obsidian42-brat:openGitHubZRepository` — BRAT: Plugins: Open the GitHub repository for a plugin
-- `obsidian42-brat:opentPluginSettings` — BRAT: Plugins: Open Plugin Settings Tab
-- `obsidian42-brat:reinstallOnePlugin` — BRAT: Plugins: Choose a single plugin to reinstall
-- `obsidian42-brat:restartPlugin` — BRAT: Plugins: Restart a plugin that is already installed
-- `obsidian42-brat:updateBetaThemes` — BRAT: Themes: Update beta themes
-- `obsidian42-brat:updateOnePlugin` — BRAT: Plugins: Choose a single plugin version to update
-
-## obsidibot
-- `obsidibot:clear-session` — ObsidiBot: Clear current session
-- `obsidibot:copy-last-response` — ObsidiBot: Copy last response
-- `obsidibot:export-conversation` — ObsidiBot: Export conversation
-- `obsidibot:export-to-vault` — ObsidiBot: Export session to vault
-- `obsidibot:focus-input` — ObsidiBot: Focus chat input
-- `obsidibot:new-session` — ObsidiBot: New session
-- `obsidibot:open-agent` — ObsidiBot: Open agent panel
-- `obsidibot:open-context-file` — ObsidiBot: Open context file
-- `obsidibot:open-settings` — ObsidiBot: Open settings
-- `obsidibot:refresh-context` — ObsidiBot: Refresh session context
-- `obsidibot:reload-skills` — ObsidiBot: Reload skills
-- `obsidibot:send-selection` — ObsidiBot: Send selection as context
-- `obsidibot:show-about` — ObsidiBot: About
-- `obsidibot:show-session-history` — ObsidiBot: Show session history
-- `obsidibot:toggle-panel` — ObsidiBot: Toggle panel
-
 ## open-with-default-app
 - `open-with-default-app:open` — Open in default app
 - `open-with-default-app:show` — Show in system explorer
@@ -269,12 +212,6 @@ _Grep by plugin name or display name to find the right command ID for run-comman
 
 ## switcher
 - `switcher:open` — Quick switcher: Open quick switcher
-
-## sync
-- `sync:open-sync-log` — Sync: Open activity log
-- `sync:open-sync-view` — Sync: Show Sync history
-- `sync:setup` — Sync: Set up Sync
-- `sync:view-version-history` — Sync: Open version history for the current file
 
 ## tag-pane
 - `tag-pane:open` — Tags view: Show tags

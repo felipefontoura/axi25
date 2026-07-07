@@ -16,14 +16,14 @@ próprio plugin te guia passo a passo — você não precisa saber usar terminal
 1. **Instale o Obsidian** (grátis) em <https://obsidian.md>. Abra-o e escolha
    **"Abrir pasta como cofre"** → selecione a pasta do seu AXI25 (a que você descompactou).
 2. O Obsidian vai perguntar se confia no cofre e se pode ativar plugins da comunidade — **permita**.
-   O painel de IA (**BojuBot**) **já vem incluído e configurado** no cofre; ao permitir os plugins,
+   O painel de IA (**AXI25**) **já vem incluído e configurado** no cofre; ao permitir os plugins,
    ele é ativado sozinho. (Não precisa instalar nada pela loja.)
-3. Abra o painel do BojuBot (ícone na barra lateral ou paleta de comandos → "BojuBot"). Na primeira
+3. Abra o painel do AXI25 (ícone na barra lateral ou paleta de comandos → "AXI25"). Na primeira
    vez ele mostra um **assistente**:
    - **Passo "Install Claude Code"** — ele mostra um comando com botão de **copiar**. Cole onde ele
      pedir (ele abre o local certo pra você). É o único comando de toda a instalação.
    - **Passo de login** — abre o navegador para você entrar com sua **conta Claude (Pro ou Max)**.
-4. Pronto. No chat do BojuBot, diga um oi (ou escreva qualquer coisa). Num cofre novo isso já
+4. Pronto. No chat do AXI25, diga um oi (ou escreva qualquer coisa). Num cofre novo isso já
    dispara o treino guiado, ele te leva pelo resto. As skills já estão pré-configuradas como
    comandos (digite `/` no chat para vê-las).
 
@@ -32,7 +32,7 @@ próprio plugin te guia passo a passo — você não precisa saber usar terminal
 
 > **Por que preciso do "Claude Code"?** O painel de IA do Obsidian roda em cima do Claude Code (o
 > motor de linha de comando da Anthropic), que aceita login com sua assinatura Pro/Max. O
-> assistente do ObsidiBot instala e conecta isso pra você — é o mais perto de "zero terminal" que dá.
+> assistente do AXI25 instala e conecta isso pra você — é o mais perto de "zero terminal" que dá.
 
 Nada mais precisa ser configurado: as pastas, as skills e o `CLAUDE.md` já vêm prontos no cofre.
 
@@ -95,10 +95,10 @@ técnicas → implementação). Precisa instalar o CLI de algum deles? Peça no 
 
 ## Resolução de problemas
 
-- **O ObsidiBot diz que não achou o Claude** → você ainda não completou o assistente dele (Passo 5).
+- **O AXI25 diz que não achou o Claude** → você ainda não completou o assistente dele (Passo 5).
   Rode o comando "Install Claude Code" que ele mostra e faça o login. Ele usa esse mesmo programa.
 - **Precisa de uma assinatura** → o login do Claude Code exige uma conta **Claude Pro ou Max**.
-- **As skills não aparecem como comandos no Obsidian** → em Configurações → ObsidiBot, confira que a
+- **As skills não aparecem como comandos no Obsidian** → em Configurações → AXI25, confira que a
   pasta de skills (`commandsFolder`) está apontando para `.agents/skills` e que "Register skills as
   commands" está ligado (já vem assim).
 - **Você disse oi e nada aconteceu** → confirme que você abriu a *pasta* como cofre (não um arquivo

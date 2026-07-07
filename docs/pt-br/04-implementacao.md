@@ -8,13 +8,13 @@
 ```
 AXI25/
 ├── AGENTS.md            constituição — todo agente lê isto (a única fonte da verdade)
-├── CLAUDE.md            arquivo de contexto do Claude Code / ObsidiBot → importa o AGENTS.md (@AGENTS.md)
+├── CLAUDE.md            arquivo de contexto do Claude Code / AXI25 → importa o AGENTS.md (@AGENTS.md)
 ├── opencode.json        config do OpenCode → aponta para o AGENTS.md, define o agente "axi25"
 ├── index.md             catálogo de todas as páginas do wiki (o agente mantém)
 ├── log.md               registro de operações somente-anexar (append-only)
 ├── .bin/install.sh / .ps1    opcional: re-sincroniza a cópia .claude/skills; checagem de saúde
 ├── .agents/skills/      as 13 skills — canônico (Codex, OpenCode, Pi leem daqui nativamente)
-├── .claude/skills/      uma CÓPIA real das 13 skills p/ Claude Code + o wrapper ObsidiBot
+├── .claude/skills/      uma CÓPIA real das 13 skills p/ Claude Code + o wrapper AXI25
 ├── .obsidian/           config do vault Obsidian (plugins, aparência) — o caminho principal
 ├── 00-capture/          INBOX  → quick/ diary/ studies/ worklogs/
 ├── 10-sources/          MATERIAL BRUTO (somente leitura) → articles/ books/ courses/ papers/ assets/
@@ -113,7 +113,7 @@ grep …`) e só linka o que é real — ou cria um stub consciente antes. Sem l
 O contrato universal é o **`AGENTS.md`**. Todo agente o lê; as skills vêm de duas pastas **reais**
 (nunca symlinks), então nada quebra em nenhum SO:
 
-- **Obsidian + Claude Code** (o caminho pensado, zero-comando) — o wrapper ObsidiBot lê o `CLAUDE.md`
+- **Obsidian + Claude Code** (o caminho pensado, zero-comando) — o wrapper AXI25 lê o `CLAUDE.md`
   como arquivo de contexto e o `commandsFolder` já aponta para as skills, então cada uma vira um
   comando. O `claude` CLI por baixo também descobre `.claude/skills/` nativamente.
 - **OpenAI Codex** — lê o `AGENTS.md` nativamente e descobre skills em `.agents/skills/`.

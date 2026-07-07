@@ -58,7 +58,7 @@ Tudo que é voltado ao usuário é controlado por `90-system/references/user-pro
 | Strategy framework | canais/pilares nomeados para onde a colheita roteia |
 
 O comportamento do painel do Obsidian (modo de permissão, a pasta de comandos-skill, o arquivo de
-contexto) fica em `.obsidian/plugins/bojubot/data.json` — já vem pré-configurado
+contexto) fica em `.obsidian/plugins/axi25/data.json` — já vem pré-configurado
 (`commandsFolder: .agents/skills`, `contextFilePath: CLAUDE.md`, `permissionMode: acceptEdits`).
 Aumente ou reduza a autonomia por ali.
 

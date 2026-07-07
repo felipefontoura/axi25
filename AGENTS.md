@@ -252,7 +252,7 @@ If ambiguous: ask the user.
 AXI25 **ships with real skill directories — no symlinks** — so it works after any zip extraction
 on Linux, macOS, and Windows with zero setup.
 
-- **Designed-for (zero-command)**: **Obsidian + Claude Code** via the ObsidiBot/BojuBot wrapper —
+- **Designed-for (zero-command)**: **Obsidian + Claude Code** via the AXI25 plugin —
   the lay-user experience (open the folder, the AI operates the vault using the user's own Claude
   subscription).
 - **Also supported (power users, via `docs/`)**: **OpenAI Codex**, **OpenCode**, **Pi.dev**, and
@@ -263,7 +263,7 @@ on Linux, macOS, and Windows with zero setup.
 - `.agents/skills/<name>/SKILL.md` — the canonical set (open "Agent Skills" standard).
   **Codex, OpenCode, and Pi discover skills here natively** (all also read this `AGENTS.md`).
 - `.claude/skills/<name>/SKILL.md` — a real copy for **Claude Code** native discovery and for the
-  **ObsidiBot** wrapper (whose `commandsFolder` is pre-pointed at the skills, so each shows up as a
+  **AXI25** wrapper (whose `commandsFolder` is pre-pointed at the skills, so each shows up as a
   command in Obsidian).
 
 **How to load a skill:**
