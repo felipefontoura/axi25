@@ -1,0 +1,11 @@
+# AXI25 — line-ending normalization so the vault behaves the same on any OS.
+# (No Git LFS: the shipped assets are small PNGs stored as normal blobs. If you later
+#  keep large media in 10-sources/assets and want LFS, add filters here + `lfs: true`
+#  to the CI checkout steps.)
+*.md   text eol=lf
+*.sh   text eol=lf
+*.mjs  text eol=lf
+*.json text eol=lf
+*.png  binary
+*.jpg  binary
+*.pdf  binary

@@ -1,0 +1,76 @@
+name: CI
+
+# Release is automated: the version lives in package.json. Push to main and, if a
+# release for v<version> doesn't exist yet, CI builds the zip and creates the tag +
+# GitHub Release automatically. To ship a new version: bump "version" in package.json,
+# commit, push. No manual `git tag` ever.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  lint:
+    name: Lint (markdown)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npx --yes markdownlint-cli2 "**/*.md"
+
+  test:
+    name: Test (verify structure)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node --check .bin/axi25.mjs && node --check .ci/verify.mjs
+      - run: npm test
+
+  release:
+    name: Auto tag & release
+    needs: [lint, test]
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Read version from package.json
+        id: v
+        run: echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+      - name: Does the release already exist?
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "v${{ steps.v.outputs.version }}" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "Release v${{ steps.v.outputs.version }} already exists — nothing to do."
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Build the distributable zip
+        if: steps.check.outputs.exists == 'false'
+        run: bash .ci/build-dist.sh "${{ steps.v.outputs.version }}"
+      - name: Create tag + GitHub Release with the zip
+        if: steps.check.outputs.exists == 'false'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.v.outputs.version }}
+          name: AXI25 v${{ steps.v.outputs.version }}
+          files: dist/*.zip
+          generate_release_notes: true

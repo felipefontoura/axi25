@@ -1,0 +1,11 @@
+{
+  "contextFilePath": "CLAUDE.md",
+  "commandsFolder": ".agents/skills",
+  "registerSkillsAsCommands": true,
+  "skipContextFilePrompt": true,
+  "resumeLastSession": true,
+  "sendOnEnter": false,
+  "permissionMode": "acceptEdits",
+  "vaultTreeDepth": 3,
+  "atMentionExtensions": "md, canvas, pdf, txt"
+}

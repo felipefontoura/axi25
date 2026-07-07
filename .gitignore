@@ -1,0 +1,33 @@
+# AXI25 — ignore local, machine-specific, and secret files
+
+# OS / editor cruft
+.DS_Store
+*.swp
+*.swo
+Thumbs.db
+
+# Obsidian local state (safe to keep the app but not the workspace layout)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.trash/
+**/*-debug.log
+
+# Build output (the distributable zip)
+dist/
+
+# Python — global (only relevant if you add advanced/Pro script skills later)
+__pycache__/
+.venv/
+.env
+
+# Harness local settings and locks (personal, not shared)
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+.opencode/local.json
+
+# Secrets — never commit credentials (Pro add-on skills only)
+**/credentials/
+*.secret
+
+# Internal — not part of the shipped product (mentions the origin vault)
+AUDIT.md

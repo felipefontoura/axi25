@@ -1,0 +1,66 @@
+{
+  "name": "axi25",
+  "version": "1.0.0",
+  "description": "AXI25 — your second brain, run by an AI. A harness-agnostic Markdown vault + skills for Claude Code, OpenAI Codex, OpenCode, and Pi.",
+  "type": "module",
+  "bin": {
+    "axi25": ".bin/axi25.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "init": "node .bin/axi25.mjs init",
+    "wire": "node .bin/axi25.mjs wire",
+    "doctor": "node .bin/axi25.mjs doctor",
+    "lint": "markdownlint-cli2 \"**/*.md\"",
+    "test": "node .ci/verify.mjs",
+    "build": "bash .ci/build-dist.sh"
+  },
+  "files": [
+    ".bin/",
+    ".assets/",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "README.md",
+    "README.pt-br.md",
+    "README.en.md",
+    "SETUP.md",
+    "SETUP.pt-br.md",
+    "SETUP.en.md",
+    "LICENSE",
+    "THIRD-PARTY-NOTICES.md",
+    "opencode.json",
+    ".markdownlint-cli2.jsonc",
+    ".gitignore",
+    ".gitattributes",
+    "index.md",
+    "log.md",
+    "docs/",
+    ".agents/",
+    ".claude/",
+    ".obsidian/",
+    "00-capture/",
+    "10-sources/",
+    "20-wiki/",
+    "25-studies/",
+    "30-projects/",
+    "35-worklogs/",
+    "40-journal/",
+    "50-zeitgeist/",
+    "90-system/"
+  ],
+  "keywords": [
+    "second-brain",
+    "zettelkasten",
+    "para",
+    "obsidian",
+    "claude-code",
+    "codex",
+    "opencode",
+    "agents",
+    "knowledge-management",
+    "axi25"
+  ],
+  "license": "MIT"
+}
