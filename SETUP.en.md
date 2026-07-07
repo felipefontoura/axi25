@@ -15,9 +15,16 @@ plugin walks you through it — no terminal knowledge required.
 
 1. **Install Obsidian** (free) from <https://obsidian.md>. Open it and choose
    **"Open folder as vault"** → select your AXI25 folder (the one you extracted).
-2. Obsidian will ask whether you trust the vault and can enable community plugins — **allow it**.
-   The AI panel (**AXI25**) **is already bundled and pre-configured** in the vault; allowing
-   plugins enables it automatically. (Nothing to install from the store.)
+2. **Enable community plugins** — the one spot where people get stuck (it's a single click).
+   When the vault opens, Obsidian shows a security prompt about community plugins. Click the button
+   that **enables/trusts** them (something like **"Trust author and enable plugins"** or **"Turn on
+   community plugins"**). The **AXI25** panel is already bundled and pre-configured — enabling
+   plugins brings it up automatically. You **don't** install anything from the store.
+
+   > ⚠️ **If the prompt doesn't appear, or the panel doesn't show up:** open **Settings** (gear,
+   > bottom-left) → **Community plugins** → turn off **Restricted mode** → confirm **AXI25** is
+   > **enabled** in the list. This trust step is an Obsidian security gate and **can't be skipped** —
+   > but it's one click, and it never repeats for this vault.
 3. Open the AXI25 panel (sidebar icon or command palette → "AXI25"). On first run it shows a
    **wizard**:
    - **"Install Claude Code" step** — it shows a command with a **copy** button. Paste it where it

@@ -15,9 +15,16 @@ próprio plugin te guia passo a passo — você não precisa saber usar terminal
 
 1. **Instale o Obsidian** (grátis) em <https://obsidian.md>. Abra-o e escolha
    **"Abrir pasta como cofre"** → selecione a pasta do seu AXI25 (a que você descompactou).
-2. O Obsidian vai perguntar se confia no cofre e se pode ativar plugins da comunidade — **permita**.
-   O painel de IA (**AXI25**) **já vem incluído e configurado** no cofre; ao permitir os plugins,
-   ele é ativado sozinho. (Não precisa instalar nada pela loja.)
+2. **Ative os plugins da comunidade** — o único ponto onde muita gente trava (é 1 clique).
+   Ao abrir o cofre, o Obsidian mostra um aviso de segurança sobre plugins da comunidade. Clique no
+   botão que **ativa/confia** (algo como **"Trust author and enable plugins"** ou **"Turn on
+   community plugins"**). O painel **AXI25** já vem incluído e configurado — ao ativar, ele sobe
+   sozinho. Você **não** instala nada pela loja.
+
+   > ⚠️ **Se o aviso não aparecer, ou o painel não surgir:** abra **Configurações** (engrenagem, canto
+   > inferior esquerdo) → **Plugins da comunidade** → desligue o **Modo restrito** (*Restricted mode*)
+   > → confirme que o **AXI25** está **ativado** na lista. Esse passo de confiança é uma trava de
+   > segurança do Obsidian e **não dá pra pular** — mas é um clique só, e nunca mais se repete neste cofre.
 3. Abra o painel do AXI25 (ícone na barra lateral ou paleta de comandos → "AXI25"). Na primeira
    vez ele mostra um **assistente**:
    - **Passo "Install Claude Code"** — ele mostra um comando com botão de **copiar**. Cole onde ele
