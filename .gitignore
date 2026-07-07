@@ -31,3 +31,6 @@ __pycache__/
 
 # Internal — not part of the shipped product (mentions the origin vault)
 AUDIT.md
+
+# Internal — operator-only ops notes (launch checklists, etc.), never shipped
+_ops/
