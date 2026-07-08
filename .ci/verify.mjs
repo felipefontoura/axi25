@@ -50,13 +50,41 @@ async function main() {
   for (const f of required) (await exists(f)) ? null : fail(`missing required file: ${f}`);
   ok(`required files present (${required.length})`);
 
-  // 2. Skills: two real dirs, in sync, each with SKILL.md
-  const agents = (await fs.readdir(".agents/skills", { withFileTypes: true })).filter((d) => d.isDirectory()).map((d) => d.name).sort();
-  const claude = (await fs.readdir(".claude/skills", { withFileTypes: true })).filter((d) => d.isDirectory()).map((d) => d.name).sort();
+  // 2. Skills: two real dirs, BYTE-FOR-BYTE in sync, each with SKILL.md.
+  //    .claude/skills is a generated copy of .agents/skills (wire regenerates it). We compare
+  //    the CONTENT of every skill — not just folder names — so a hand-edited or stale copy can
+  //    never be committed or shipped. Top-level files in .claude/skills (e.g. the
+  //    GENERATED-DO-NOT-EDIT marker) are not part of the contract and are ignored.
+  const skillDirs = async (root) =>
+    (await fs.readdir(root, { withFileTypes: true })).filter((d) => d.isDirectory()).map((d) => d.name).sort();
+  const readSkill = async (base) => {
+    const out = new Map();
+    const rec = async (dir, rel) => {
+      for (const e of await fs.readdir(dir, { withFileTypes: true })) {
+        const r = rel ? `${rel}/${e.name}` : e.name;
+        e.isDirectory() ? await rec(path.join(dir, e.name), r) : out.set(r, await fs.readFile(path.join(dir, e.name)));
+      }
+    };
+    await rec(base, "");
+    return out;
+  };
+  const agents = await skillDirs(".agents/skills");
+  const claude = await skillDirs(".claude/skills");
   if (agents.length < 10) fail(`too few skills in .agents/skills (${agents.length})`);
-  if (agents.join(",") !== claude.join(",")) fail(".agents/skills and .claude/skills are out of sync (run: npm run wire)");
-  for (const s of agents) if (!(await exists(path.join(".agents/skills", s, "SKILL.md")))) fail(`skill ${s} missing SKILL.md`);
-  ok(`skills: ${agents.length} in .agents/skills, mirrored to .claude/skills`);
+  if (agents.join(",") !== claude.join(",")) fail(".agents/skills and .claude/skills list different skills (run: npm run wire)");
+  let drift = 0;
+  for (const s of agents) {
+    if (!(await exists(path.join(".agents/skills", s, "SKILL.md")))) fail(`skill ${s} missing SKILL.md`);
+    if (!claude.includes(s)) continue; // divergence already reported above
+    const a = await readSkill(path.join(".agents/skills", s));
+    const c = await readSkill(path.join(".claude/skills", s));
+    for (const [f, bytes] of a) {
+      if (!c.has(f)) { drift++; fail(`${s}/${f}: missing in .claude/skills (run: npm run wire)`); }
+      else if (!bytes.equals(c.get(f))) { drift++; fail(`${s}/${f}: .claude copy differs from .agents (run: npm run wire)`); }
+    }
+    for (const f of c.keys()) if (!a.has(f)) { drift++; fail(`${s}/${f}: extra in .claude/skills (run: npm run wire)`); }
+  }
+  if (drift === 0 && agents.join(",") === claude.join(",")) ok(`skills: ${agents.length} in .agents/skills, byte-identical copy in .claude/skills`);
 
   // 3. Fresh-vault invariant
   const profile = await fs.readFile("90-system/references/user-profile.md", "utf8");

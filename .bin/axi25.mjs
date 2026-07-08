@@ -102,6 +102,9 @@ async function wireSkills(root) {
   await fs.rm(claudeSkills, { recursive: true, force: true });
   await fs.mkdir(path.dirname(claudeSkills), { recursive: true });
   await fs.cp(canonical, claudeSkills, { recursive: true });
+  // name-as-message marker: an empty file whose name warns this copy is generated (edit
+  // .agents/skills instead). The real guard against a stale copy is .ci/verify.mjs.
+  await fs.writeFile(path.join(claudeSkills, "GENERATED-DO-NOT-EDIT"), "");
   ok(".claude/skills — real copy for Claude Code + the AXI25 Obsidian plugin");
 }
 

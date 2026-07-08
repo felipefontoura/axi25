@@ -31,6 +31,8 @@ Ok "Canonical skills in .agents/skills ($count skills) - read natively by Codex,
 if (Test-Path ".claude/skills") { Remove-Item ".claude/skills" -Recurse -Force }
 if (-not (Test-Path ".claude")) { New-Item -ItemType Directory -Path ".claude" -Force | Out-Null }
 Copy-Item ".agents/skills" ".claude/skills" -Recurse -Force
+# name-as-message marker: this copy is generated
+New-Item -ItemType File -Path ".claude/skills/GENERATED-DO-NOT-EDIT" -Force | Out-Null
 Ok ".claude/skills refreshed (real copy) - read by Claude Code + the AXI25 Obsidian plugin"
 
 # 3. Context files.

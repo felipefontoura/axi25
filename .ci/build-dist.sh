@@ -31,8 +31,11 @@ node "$PLUGIN/.build/apply-brand.mjs" --check
 # 3. Never ship a live session (the committed default is already blank; this is belt-and-suspenders).
 node -e "const f='$PLUGIN/data.json',fs=require('fs');const d=JSON.parse(fs.readFileSync(f));if(d.lastActiveSessionId){d.lastActiveSessionId='';fs.writeFileSync(f,JSON.stringify(d,null,2)+'\n')}"
 
-# 4. Refresh the Claude Code skills copy so the zip is consistent.
+# 4. Refresh the Claude Code skills copy so the zip is consistent. The empty
+#    GENERATED-DO-NOT-EDIT marker (its name is the message) warns anyone browsing the
+#    copy; the real guard against a stale copy is .ci/verify.mjs's byte-for-byte check.
 rm -rf .claude/skills && cp -R .agents/skills .claude/skills
+touch .claude/skills/GENERATED-DO-NOT-EDIT
 
 # 5. Files/dirs that must NOT reach the buyer.
 EXCLUDES=(

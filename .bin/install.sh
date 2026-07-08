@@ -33,6 +33,7 @@ ok "Canonical skills in .agents/skills ($(find .agents/skills -maxdepth 1 -minde
 rm -rf ".claude/skills"
 mkdir -p ".claude"
 cp -R ".agents/skills" ".claude/skills"
+touch ".claude/skills/GENERATED-DO-NOT-EDIT"   # name-as-message marker: this copy is generated
 ok ".claude/skills refreshed (real copy) — read by Claude Code + the AXI25 Obsidian plugin"
 
 # 3. Anchor / context files.
