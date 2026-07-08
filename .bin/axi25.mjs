@@ -38,7 +38,7 @@ const DIRS = [
 
 // Skills are REAL directories (no symlinks — Windows-safe). `.agents/skills` is canonical
 // (read natively by Codex, OpenCode, Pi). `.claude/skills` is a synced real copy for
-// Claude Code + the ObsidiBot Obsidian wrapper.
+// Claude Code + the AXI25 Obsidian plugin.
 const CANONICAL_SKILLS = ".agents/skills";
 const CLAUDE_SKILLS = ".claude/skills";
 
@@ -102,7 +102,7 @@ async function wireSkills(root) {
   await fs.rm(claudeSkills, { recursive: true, force: true });
   await fs.mkdir(path.dirname(claudeSkills), { recursive: true });
   await fs.cp(canonical, claudeSkills, { recursive: true });
-  ok(".claude/skills — real copy for Claude Code + the ObsidiBot Obsidian wrapper");
+  ok(".claude/skills — real copy for Claude Code + the AXI25 Obsidian plugin");
 }
 
 async function cmdInit(dir) {

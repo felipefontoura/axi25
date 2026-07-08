@@ -31,10 +31,10 @@ Ok "Canonical skills in .agents/skills ($count skills) - read natively by Codex,
 if (Test-Path ".claude/skills") { Remove-Item ".claude/skills" -Recurse -Force }
 if (-not (Test-Path ".claude")) { New-Item -ItemType Directory -Path ".claude" -Force | Out-Null }
 Copy-Item ".agents/skills" ".claude/skills" -Recurse -Force
-Ok ".claude/skills refreshed (real copy) - read by Claude Code + the ObsidiBot Obsidian wrapper"
+Ok ".claude/skills refreshed (real copy) - read by Claude Code + the AXI25 Obsidian plugin"
 
 # 3. Context files.
-if (Test-Path "CLAUDE.md") { Ok "CLAUDE.md present" } else { Warn "CLAUDE.md missing (ObsidiBot reads it)" }
+if (Test-Path "CLAUDE.md") { Ok "CLAUDE.md present" } else { Warn "CLAUDE.md missing (AXI25 reads it)" }
 if (Test-Path "AGENTS.md") { Ok "AGENTS.md present" } else { Warn "AGENTS.md missing" }
 
 # 4. Onboarding state.

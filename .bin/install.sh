@@ -33,10 +33,10 @@ ok "Canonical skills in .agents/skills ($(find .agents/skills -maxdepth 1 -minde
 rm -rf ".claude/skills"
 mkdir -p ".claude"
 cp -R ".agents/skills" ".claude/skills"
-ok ".claude/skills refreshed (real copy) — read by Claude Code + the ObsidiBot Obsidian wrapper"
+ok ".claude/skills refreshed (real copy) — read by Claude Code + the AXI25 Obsidian plugin"
 
 # 3. Anchor / context files.
-[ -f "CLAUDE.md" ] && ok "CLAUDE.md present" || warn "CLAUDE.md missing (ObsidiBot reads it)"
+[ -f "CLAUDE.md" ] && ok "CLAUDE.md present" || warn "CLAUDE.md missing (AXI25 reads it)"
 [ -f "AGENTS.md" ] && ok "AGENTS.md present" || warn "AGENTS.md missing"
 
 # 4. Onboarding state.
