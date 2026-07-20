@@ -9,6 +9,8 @@ Thumbs.db
 # Obsidian local state (safe to keep the app but not the workspace layout)
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
+# Obsidian Git local settings (commit template, remote, name) — buyers get clean defaults
+.obsidian/plugins/obsidian-git/data.json
 .trash/
 **/*-debug.log
 
