@@ -58,7 +58,7 @@ Everything user-facing is driven by `90-system/references/user-profile.md`:
 | Strategy framework | named channels/pillars the harvest routes into |
 
 The Obsidian panel's behavior (permission mode, the skills-command folder, the context file) lives
-in `.obsidian/plugins/axi25/data.json` — it ships pre-set (`commandsFolder: .agents/skills`,
+in `.obsidian/plugins/bojubot/data.json` — it ships pre-set (`commandsFolder: .agents/skills`,
 `contextFilePath: CLAUDE.md`, `permissionMode: acceptEdits`). Raise or lower autonomy there.
 
 ## Backups: cloud folder, Obsidian Sync, or git

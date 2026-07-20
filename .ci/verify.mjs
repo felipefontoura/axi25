@@ -44,7 +44,7 @@ async function main() {
     "SETUP.md", "SETUP.pt-br.md", "SETUP.en.md", "LICENSE", "THIRD-PARTY-NOTICES.md",
     "90-system/references/user-profile.md", "90-system/references/page-templates.md",
     ".assets/axi25-banner.png", ".assets/axi25-banner-dark.png",
-    ".obsidian/plugins/axi25/main.js", ".obsidian/plugins/axi25/manifest.json",
+    ".obsidian/plugins/bojubot/main.js", ".obsidian/plugins/bojubot/manifest.json",
     ".bin/axi25.mjs",
   ];
   for (const f of required) (await exists(f)) ? null : fail(`missing required file: ${f}`);

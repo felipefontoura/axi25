@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 #
 # Build the distributable AXI25 zip that buyers download.
-# The plugin lives in a git submodule (.obsidian/plugins/axi25); this assembles a
-# CLEAN copy of the working tree — verified branding, no git / dev / submodule internals.
+# The plugin lives in a git submodule (.obsidian/plugins/bojubot — the folder name must
+# match manifest.id); this assembles a CLEAN copy of the working tree — verified branding,
+# no git / dev / submodule internals.
 #
 #   Usage:  bash .ci/build-dist.sh [version]     # e.g. bash .ci/build-dist.sh 1.0.0
 #
@@ -11,7 +12,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 
-PLUGIN=".obsidian/plugins/axi25"
+PLUGIN=".obsidian/plugins/bojubot"
 VERSION="${1:-$(node -e "process.stdout.write(require('./package.json').version)" 2>/dev/null || echo 1.0.0)}"
 OUT="dist/axi25-${VERSION}.zip"
 mkdir -p dist
@@ -25,8 +26,22 @@ if [ ! -f "$PLUGIN/main.js" ] || [ ! -f "$PLUGIN/manifest.json" ]; then
   exit 1
 fi
 
-# 2. Brand guard — refuse to ship a plugin that isn't fully branded (drift / leaks).
-node "$PLUGIN/.build/apply-brand.mjs" --check
+# 2. Brand guard — refuse to ship a plugin that isn't branded as AXI25. Branding is no
+#    longer a bundle patch: it's the upstream `brand` config in data.json plus the manifest
+#    identity. Verify both, so a stray stock-BojuBot build can never reach a buyer.
+node -e "
+const fs=require('fs');
+const m=JSON.parse(fs.readFileSync('$PLUGIN/manifest.json'));
+const d=JSON.parse(fs.readFileSync('$PLUGIN/data.json'));
+const e=[];
+if(m.id!=='bojubot')e.push('manifest.id='+m.id+' (must be bojubot: upstream hardcodes plugins/bojubot/)');
+if(m.name!=='AXI25')e.push('manifest.name='+m.name);
+if(m.author!=='Felipe Fontoura')e.push('manifest.author='+m.author);
+if(!d.brand||d.brand.name!=='AXI25')e.push('data.brand.name='+(d.brand&&d.brand.name)+' (not white-labeled)');
+if(d.brand&&d.brand.locked!==true)e.push('data.brand.locked is not true (Brand settings would be user-visible)');
+if(e.length){console.error('  ✗ brand guard:\n    - '+e.join('\n    - '));process.exit(1)}
+console.log('  ✓ brand guard: AXI25 (id=bojubot), white-labeled + locked');
+"
 
 # 3. Never ship a live session (the committed default is already blank; this is belt-and-suspenders).
 node -e "const f='$PLUGIN/data.json',fs=require('fs');const d=JSON.parse(fs.readFileSync(f));if(d.lastActiveSessionId){d.lastActiveSessionId='';fs.writeFileSync(f,JSON.stringify(d,null,2)+'\n')}"
