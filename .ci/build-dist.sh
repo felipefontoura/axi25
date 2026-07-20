@@ -61,6 +61,10 @@ EXCLUDES=(
   "*-debug.log" "**/*-debug.log"
   ".DS_Store" "**/.DS_Store"
   ".claude/settings.local.json" ".claude/scheduled_tasks.lock"
+  # Obsidian Git runtime-local files (created when the plugin runs) — never ship them;
+  # gitignore alone doesn't help here since we zip the working tree, not the git index.
+  ".obsidian/plugins/obsidian-git/data.json"
+  ".obsidian/plugins/obsidian-git/obsidian_askpass.sh"
   # plugin submodule: strip git + dev tooling, keep only the loadable plugin
   "$PLUGIN/.git" "$PLUGIN/.build/*" "$PLUGIN/.build"
   "$PLUGIN/.gitignore" "$PLUGIN/.markdownlint-cli2.jsonc"
