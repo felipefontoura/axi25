@@ -20,24 +20,24 @@ jobs:
     name: Lint (markdown)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 24
       - run: npx --yes markdownlint-cli2 "**/*.md"
 
   test:
     name: Test (verify structure)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Check out the plugin submodule
         env:
           AXI25_PLUGIN_DEPLOY_KEY: ${{ secrets.AXI25_PLUGIN_DEPLOY_KEY }}
         run: bash .ci/checkout-submodule.sh
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 24
       - run: node --check .bin/axi25.mjs && node --check .ci/verify.mjs
       - run: npm test
 
@@ -47,16 +47,16 @@ jobs:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - name: Check out the plugin submodule
         env:
           AXI25_PLUGIN_DEPLOY_KEY: ${{ secrets.AXI25_PLUGIN_DEPLOY_KEY }}
         run: bash .ci/checkout-submodule.sh
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 24
       - name: Read version from package.json
         id: v
         run: echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
