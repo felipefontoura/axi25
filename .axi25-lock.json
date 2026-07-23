@@ -1,0 +1,19 @@
+{
+  "core": "@axi25/core",
+  "source": "submodule",
+  "version": "2.0.0",
+  "wiredAt": "2026-07-23T21:08:55.367Z",
+  "projections": {
+    ".agents/skills": "sha256:e92498d76f9f280367af97bebcf0b79fc3418d35abb07e65b06a9221a4c553fd",
+    ".claude/skills": "sha256:e92498d76f9f280367af97bebcf0b79fc3418d35abb07e65b06a9221a4c553fd",
+    "AGENTS.md": "sha256:dd882ab04a778130835c4b1cf97bc90a35af502df442e3a5b449ecfa4a63e304",
+    "90-system/references/axi25-definition.md": "sha256:2d352f60e5f1580d95d269fa142c12ee724f64d2213ed0ae8db2d16389f72291",
+    "90-system/references/operations.md": "sha256:db504db3c6c92d65c475318fa19416f28019bae913568e2d53ff9ae0465e13fb",
+    "90-system/references/page-templates.md": "sha256:5711bf10df1415d3a8d0474bedcc2da947cd808dcfdf562f4fcb10707d6e0f73",
+    "90-system/references/maturity.md": "sha256:71bccdf3fcd9265489d1a61c2d25c8b3c04907e6b78da3662ce64b5847a41fb9",
+    "90-system/references/naming.md": "sha256:9d428b71c30093d2d95de4be3a2c052d3cd4157f1046b9feba29b2157c1510ed",
+    ".markdownlint-cli2.jsonc": "sha256:c76820d3c2493a2fcfd183bff6170b14dc00962d8ff04523bf447be7944f91f1",
+    "CLAUDE.md": "sha256:336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49",
+    "opencode.json": "sha256:4be18a4360d8dc3da728591820a3efd50ff04b173b19c06a4afd97ce85383c10"
+  }
+}

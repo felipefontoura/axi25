@@ -1,6 +1,8 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "instructions": ["AGENTS.md"],
+  "instructions": [
+    "AGENTS.md"
+  ],
   "agent": {
     "axi25": {
       "description": "Operator of your AXI25 second brain (wiki-llm). Captures, links, and maintains your knowledge base following AGENTS.md and the .agents/skills.",
@@ -8,5 +10,6 @@
       "temperature": 0.3,
       "color": "#A5D6A7"
     }
-  }
+  },
+  "//": "the `instructions` entry is managed by `axi25 wire`"
 }
