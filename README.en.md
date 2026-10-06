@@ -76,6 +76,10 @@ notes come out in your language. So do the file names, or force English if you p
 Use Codex, OpenCode, or Pi in the terminal? It runs there too, no extra step. Want to extend,
 version, or package it? It's all in the [`docs/`](docs/) folder.
 
+## Running it at work
+
+If you are a developer using AXI25 as the memory of your job, [No-Drift Wiki](https://felipefontoura.com/get/no-drift-wiki/?utm_source=github&utm_medium=referral&utm_campaign=axi25-readme) is the free 30-day playbook I run it with: house rules for meetings and citations, the two scripts in `90-system/scripts/`, and a scorecard.
+
 ## License
 
 See [`LICENSE`](LICENSE).

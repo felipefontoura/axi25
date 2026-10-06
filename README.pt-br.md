@@ -77,6 +77,10 @@ notas saem no seu idioma. Os nomes de arquivo também, ou force o inglês se pre
 Usa Codex, OpenCode ou Pi no terminal? Roda direto neles, sem passo extra. Quer estender, versionar
 ou empacotar? Está tudo na pasta [`docs/`](docs/).
 
+## Usando no trabalho
+
+Se você é dev e usa o AXI25 como memória do seu trabalho, [Wiki sem drift](https://felipefontoura.com/pt/get/no-drift-wiki/?utm_source=github&utm_medium=referral&utm_campaign=axi25-readme) é o playbook grátis de 30 dias com que eu rodo ele: house rules para reuniões e citações, os dois scripts em `90-system/scripts/` e um scorecard.
+
 ## Licença
 
 Veja o [`LICENSE`](LICENSE).
