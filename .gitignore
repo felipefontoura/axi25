@@ -9,7 +9,7 @@ Thumbs.db
 # Obsidian local state (safe to keep the app but not the workspace layout)
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
-# Obsidian Git local settings (commit template, remote, name) — buyers get clean defaults
+# Obsidian Git local settings (commit template, remote, name) — personal, never shared
 .obsidian/plugins/obsidian-git/data.json
 .trash/
 **/*-debug.log
@@ -17,7 +17,7 @@ Thumbs.db
 # Build output (the distributable zip)
 dist/
 
-# Python — global (only relevant if you add advanced/Pro script skills later)
+# Python — skill runtimes (axi25-source keeps its OpenRouter key in .env)
 __pycache__/
 .venv/
 .env
@@ -27,12 +27,12 @@ __pycache__/
 .claude/scheduled_tasks.lock
 .opencode/local.json
 
-# Secrets — never commit credentials (Pro add-on skills only)
+# Secrets — never commit credentials
 **/credentials/
 *.secret
 
-# Internal — not part of the shipped product (mentions the origin vault)
+# Maintainer-only — not part of the shipped vault
 AUDIT.md
 
-# Internal — operator-only ops notes (launch checklists, etc.), never shipped
+# Maintainer-only ops notes, never shipped
 _ops/

@@ -55,7 +55,7 @@ touch .claude/skills/GENERATED-DO-NOT-EDIT
 # 5. Files/dirs that must NOT reach the user.
 EXCLUDES=(
   ".git" ".git/*" ".github/*" ".ci/*" "dist/*" "node_modules/*"
-  ".gitmodules" ".gitignore" ".gitattributes"
+  ".gitmodules"                   # vault users get .gitignore + .gitattributes (keep .env out of backups)
   "AUDIT.md"                      # internal audit (mentions the origin vault)
   ".obsidian/workspace*.json"     # local UI layout
   "*-debug.log" "**/*-debug.log"

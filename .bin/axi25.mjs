@@ -90,6 +90,23 @@ async function ensureSkeleton(root) {
   }
 }
 
+// npm renames a packaged .gitignore to .npmignore, so a vault scaffolded from the package
+// arrives without one. Restore it: it keeps secrets (.env) and local state out of backups.
+const GITIGNORE_HEADER = "# AXI25 — ignore local, machine-specific, and secret files";
+async function ensureGitignore(root) {
+  const target = path.join(root, ".gitignore");
+  if (await exists(target)) return;
+  const local = path.join(root, ".npmignore");
+  for (const src of [local, path.join(PKG_ROOT, ".gitignore"), path.join(PKG_ROOT, ".npmignore")]) {
+    if (!(await exists(src))) continue;
+    if (!(await fs.readFile(src, "utf8")).startsWith(GITIGNORE_HEADER)) continue;
+    if (src === local) await fs.rename(src, target);
+    else await fs.copyFile(src, target);
+    ok(".gitignore restored (keeps .env and local state out of git backups)");
+    return;
+  }
+}
+
 async function wireSkills(root) {
   const canonical = path.join(root, CANONICAL_SKILLS);
   if (!(await exists(canonical))) {
@@ -120,6 +137,7 @@ async function cmdInit(dir) {
     ok("Vault template copied");
   }
   await ensureSkeleton(root);
+  await ensureGitignore(root);
   ok("Folder tree + anchor files ready");
   await wireSkills(root);
   log("");
@@ -131,6 +149,7 @@ async function cmdWire(dir) {
   const root = path.resolve(dir || ".");
   log("");
   await ensureSkeleton(root);
+  await ensureGitignore(root);
   await wireSkills(root);
   ok("Wired.");
   log("");
