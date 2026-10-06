@@ -2,7 +2,7 @@
 
 > 🇺🇸 English · 🇧🇷 [Português (principal)](SETUP.pt-br.md) · 🏠 [Home](README.md)
 
-AXI25 is built for a **no-terminal** experience: you download it, open it in **Obsidian**, and
+AXI25 is built for a **no-terminal** experience: you [download it](https://github.com/felipefontoura/axi25/releases/latest), open it in **Obsidian**, and
 the AI starts operating your notes using **your own Claude subscription** (Pro or Max). Works on
 Linux, macOS, and Windows.
 

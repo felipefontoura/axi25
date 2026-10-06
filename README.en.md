@@ -39,13 +39,23 @@ folder, when (and if) you want it.
 
 ## Start in 3 steps
 
-1. Unzip the folder wherever you like.
+1. Download the latest `axi25-*.zip` from [Releases](https://github.com/felipefontoura/axi25/releases/latest) and unzip it wherever you like.
 2. Open it in Obsidian.
 3. In the AI panel, say hi.
 
 Saying hi kicks off a guided run of about 10 minutes. It teaches you the system and builds your
 vault with you. Nothing here is a template to delete. You build it live. Step by step in
 [`SETUP.md`](SETUP.md).
+
+Prefer the terminal? These build the same vault:
+
+```bash
+npx @axi25/vault@latest init my-vault
+# or
+git clone --recurse-submodules https://github.com/felipefontoura/axi25.git my-vault
+```
+
+Clone with `--recurse-submodules`: the AI panel plugin is a submodule, and a plain clone leaves it empty.
 
 ## What you need
 
@@ -80,6 +90,13 @@ version, or package it? It's all in the [`docs/`](docs/) folder.
 
 If you are a developer using AXI25 as the memory of your job, [No-Drift Wiki](https://felipefontoura.com/get/no-drift-wiki/?utm_source=github&utm_medium=referral&utm_campaign=axi25-readme) is the free 30-day playbook I run it with: house rules for meetings and citations, the two scripts in `90-system/scripts/`, and a scorecard.
 
+## Contributing
+
+This repo is the ready-to-use vault. The skills and the agent contract live in
+[axi25-core](https://github.com/felipefontoura/axi25-core) (`@axi25/core` on npm), and the Obsidian panel in
+[axi25-plugin](https://github.com/felipefontoura/axi25-plugin). Open issues and pull requests where the change belongs.
+
 ## License
 
-See [`LICENSE`](LICENSE).
+[MIT](LICENSE). Bundled third-party components keep their own licenses; see
+[`THIRD-PARTY-NOTICES.md`](THIRD-PARTY-NOTICES.md).

@@ -8,6 +8,7 @@ Escolha seu idioma · Choose your language:
 
 ---
 
-**Resumo rápido / TL;DR:** descompacte → `bash install.sh` (macOS/Linux) ou `install.ps1`
-(Windows) → abra a pasta no seu agente (Claude Code, OpenAI Codex, OpenCode ou Pi.dev) →
+**Resumo rápido / TL;DR:** baixe o zip da [última release](https://github.com/felipefontoura/axi25/releases/latest) e descompacte
+(ou `npx @axi25/vault@latest init meu-cofre`) → `bash .bin/install.sh` (macOS/Linux) ou
+`.bin/install.ps1` (Windows) → abra a pasta no seu agente (Claude Code, OpenAI Codex, OpenCode ou Pi.dev) →
 digite `onboarding`.

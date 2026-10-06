@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Build the distributable AXI25 zip that buyers download.
+# Build the distributable AXI25 zip that users download from GitHub Releases.
 # The plugin lives in a git submodule (.obsidian/plugins/bojubot — the folder name must
 # match manifest.id); this assembles a CLEAN copy of the working tree — verified branding,
 # no git / dev / submodule internals.
@@ -28,7 +28,7 @@ fi
 
 # 2. Brand guard — refuse to ship a plugin that isn't branded as AXI25. Branding is no
 #    longer a bundle patch: it's the upstream `brand` config in data.json plus the manifest
-#    identity. Verify both, so a stray stock-BojuBot build can never reach a buyer.
+#    identity. Verify both, so a stray stock-BojuBot build can never reach a user.
 node -e "
 const fs=require('fs');
 const m=JSON.parse(fs.readFileSync('$PLUGIN/manifest.json'));
@@ -52,7 +52,7 @@ node -e "const f='$PLUGIN/data.json',fs=require('fs');const d=JSON.parse(fs.read
 rm -rf .claude/skills && cp -R .agents/skills .claude/skills
 touch .claude/skills/GENERATED-DO-NOT-EDIT
 
-# 5. Files/dirs that must NOT reach the buyer.
+# 5. Files/dirs that must NOT reach the user.
 EXCLUDES=(
   ".git" ".git/*" ".github/*" ".ci/*" "dist/*" "node_modules/*"
   ".gitmodules" ".gitignore" ".gitattributes"
@@ -82,4 +82,4 @@ ARGS=(); for e in "${EXCLUDES[@]}"; do ARGS+=("-x" "$e"); done
 zip -r -q "$OUT" . "${ARGS[@]}"
 
 echo "  ✓ Built $OUT"
-echo "  Buyers: unzip → open the folder in Obsidian → follow the panel wizard. See SETUP.md."
+echo "  Users: unzip → open the folder in Obsidian → follow the panel wizard. See SETUP.md."

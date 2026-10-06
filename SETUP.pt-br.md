@@ -2,7 +2,7 @@
 
 > 🇧🇷 Português (principal) · 🇺🇸 [English](SETUP.en.md) · 🏠 [Início](README.md)
 
-O AXI25 foi feito para uma experiência **sem terminal**: você baixa, abre no **Obsidian**, e a
+O AXI25 foi feito para uma experiência **sem terminal**: você [baixa](https://github.com/felipefontoura/axi25/releases/latest), abre no **Obsidian**, e a
 IA passa a operar suas notas usando a **sua própria assinatura do Claude** (Pro ou Max). Funciona
 no Linux, macOS e Windows.
 
