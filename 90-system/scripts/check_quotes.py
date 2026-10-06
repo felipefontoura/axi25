@@ -23,7 +23,7 @@ def match(q, src, index):
 counts = {"exact": 0, "near": 0, "loose": 0, "absent": 0}
 for page in sorted((root / "20-wiki").rglob("*.md")):
     text = page.read_text(errors="ignore")
-    cited = re.search(r"^source_path:\s*(\S+)", text, re.M)
+    cited = re.search(r"^source_path:\s*[\"']?([^\"'\s]+)", text, re.M)
     if not cited or not (root / cited.group(1)).is_file():
         continue
     src = words((root / cited.group(1)).read_text(errors="ignore"))

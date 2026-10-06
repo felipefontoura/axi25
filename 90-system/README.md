@@ -14,6 +14,7 @@ The machine room. Nothing here is "knowledge" — it is how AXI25 runs.
   - `check_quotes.py` — checks every timestamped quote in `20-wiki/` against the transcript its page cites (`source_path`). Exits 1 if a quote can't be found.
   - `wiki_lint.py` — dangling `[[links]]` and orphan pages. Exits 1 if it finds any.
   - Run them from the vault root: `python3 90-system/scripts/check_quotes.py .`
+- `samples/` — fixtures for a smoke test. `design-review-transcript.md` is a fictional, timestamped meeting: copy it to `10-sources/meetings/`, ingest it, then run `check_quotes.py`.
 
 ## What does NOT belong here
 
