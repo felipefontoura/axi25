@@ -62,5 +62,14 @@
     "knowledge-management",
     "axi25"
   ],
-  "license": "MIT"
+  "author": "Felipe Fontoura",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipefontoura/axi25.git"
+  },
+  "homepage": "https://github.com/felipefontoura/axi25#readme",
+  "bugs": {
+    "url": "https://github.com/felipefontoura/axi25/issues"
+  }
 }
