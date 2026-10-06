@@ -127,7 +127,7 @@ degrades gracefully: even a harness with zero skill support works by reading the
 
 The skills ship as two **real** directories: `.agents/skills/` (canonical) and `.claude/skills/`
 (a copy). No symlinks anywhere, so any zip extractor on any OS — including Windows — yields a
-working vault with zero setup. `.bin/install.sh` / `.bin/install.ps1` / `npx @axi25/vault wire` only
+working vault with zero setup. `.bin/install.sh` / `.bin/install.ps1` / `npx @axi25/vault@latest wire` only
 re-sync the `.claude/skills` copy after you edit `.agents/skills`; lay users never run them.
 
 ## Backups & version history

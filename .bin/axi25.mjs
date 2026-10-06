@@ -4,14 +4,14 @@
  *
  * Distribution modes:
  *   1) Zip: everything is already present; `wire` just (re)links the skills.
- *   2) npm / marketplace: `npx @axi25/vault init [dir]` materializes a full,
+ *   2) npm / marketplace: `npx @axi25/vault@latest init [dir]` materializes a full,
  *      working vault (folder tree + reference files + skills), then wires it.
  *
  * Zero dependencies. Node >= 18. Creates nothing outside the target dir.
  *
- *   npx @axi25/vault init [targetDir]   # scaffold a vault (default: ./)
- *   npx @axi25/vault wire  [targetDir]  # (re)link skills for every harness
- *   npx @axi25/vault --help
+ *   npx @axi25/vault@latest init [targetDir]   # scaffold a vault (default: ./)
+ *   npx @axi25/vault@latest wire  [targetDir]  # (re)link skills for every harness
+ *   npx @axi25/vault@latest --help
  */
 import { promises as fs } from "node:fs";
 import path from "node:path";
@@ -170,7 +170,7 @@ async function cmdDoctor(dir) {
     if (agents.length > 1) log(`(also available: ${agents.slice(1).join(", ")})`);
   } else {
     warn("No AI agent CLI found on PATH.");
-    log("Pick one and install it, then re-run `npx @axi25/vault doctor`:");
+    log("Pick one and install it, then re-run `npx @axi25/vault@latest doctor`:");
     log("  • Claude Code : npm i -g @anthropic-ai/claude-code   (Pro/Max login)");
     log("  • OpenAI Codex: npm i -g @openai/codex");
     log("  • OpenCode    : https://opencode.ai   • Pi: https://pi.dev");
@@ -185,10 +185,10 @@ function help() {
   process.stdout.write(`
 AXI25 — CLI
 
-  npx @axi25/vault doctor [dir]  Check your environment and print the exact next step
-  npx @axi25/vault init [dir]    Scaffold a full vault from scratch (default: current folder)
-  npx @axi25/vault wire [dir]    Re-sync the .claude/skills copy + ensure the folder tree
-  npx @axi25/vault --help        This help
+  npx @axi25/vault@latest doctor [dir]  Check your environment and print the exact next step
+  npx @axi25/vault@latest init [dir]    Scaffold a full vault from scratch (default: current folder)
+  npx @axi25/vault@latest wire [dir]    Re-sync the .claude/skills copy + ensure the folder tree
+  npx @axi25/vault@latest --help        This help
 
 Lay users: just open the folder in Obsidian (see SETUP.md) — no command needed.
 Power users: run \`doctor\`, then open the folder in your agent and type:  onboarding

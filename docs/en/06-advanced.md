@@ -10,7 +10,7 @@ The skills are real directories, so every supported agent discovers them with no
 vault folder:
 
 ```bash
-npx @axi25/vault doctor    # checks your env, prints the exact next step
+npx @axi25/vault@latest doctor    # checks your env, prints the exact next step
 ```
 
 | Harness | Start | Skills read from |
@@ -26,9 +26,9 @@ the `axi25-doctor` skill installs it for you, with consent, cross-OS.
 ## The CLI
 
 ```bash
-npx @axi25/vault doctor [dir]   # environment check + next step
-npx @axi25/vault init [dir]     # scaffold a full vault from scratch (any empty folder)
-npx @axi25/vault wire [dir]     # re-sync the .claude/skills copy from .agents/skills
+npx @axi25/vault@latest doctor [dir]   # environment check + next step
+npx @axi25/vault@latest init [dir]     # scaffold a full vault from scratch (any empty folder)
+npx @axi25/vault@latest wire [dir]     # re-sync the .claude/skills copy from .agents/skills
 ```
 
 `init` even works from nothing: it builds the folder tree, the reference files, and both skill
@@ -37,7 +37,7 @@ directories — the vault self-heals (see `AGENTS.md` § Self-healing environmen
 ## Extend the system
 
 - **Add a skill:** create `.agents/skills/<name>/SKILL.md` with `name` + `description` frontmatter
-  and instructions, then run `npx @axi25/vault wire` to copy it into `.claude/skills`. It
+  and instructions, then run `npx @axi25/vault@latest wire` to copy it into `.claude/skills`. It
   triggers by natural language once its description is discoverable; add a row to `AGENTS.md` §
   Skills Reference so the router knows about it.
 - **Add a life area:** create `20-wiki/areas/<area>.md` from the Area template in
