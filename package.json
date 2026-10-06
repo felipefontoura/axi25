@@ -1,6 +1,6 @@
 {
   "name": "@axi25/vault",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "AXI25 — Augmented eXtraction Intelligence. A harness-agnostic Markdown vault + skills for Claude Code, OpenAI Codex, OpenCode, and Pi.",
   "type": "module",
   "bin": {
