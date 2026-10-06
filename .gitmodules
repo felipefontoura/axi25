@@ -1,7 +1,7 @@
 [submodule ".obsidian/plugins/axi25"]
 	path = .obsidian/plugins/bojubot
-	url = git@github.com:felipefontoura/axi25-plugin.git
+	url = https://github.com/felipefontoura/axi25-plugin.git
 [submodule ".axi25"]
 	path = .axi25
-	url = git@github.com:felipefontoura/axi25-core.git
+	url = https://github.com/felipefontoura/axi25-core.git
 	branch = main
