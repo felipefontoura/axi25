@@ -1,6 +1,6 @@
 {
-  "name": "axi25",
-  "version": "1.2.0",
+  "name": "@axi25/vault",
+  "version": "1.2.1",
   "description": "AXI25 — Augmented eXtraction Intelligence. A harness-agnostic Markdown vault + skills for Claude Code, OpenAI Codex, OpenCode, and Pi.",
   "type": "module",
   "bin": {
@@ -71,5 +71,8 @@
   "homepage": "https://github.com/felipefontoura/axi25#readme",
   "bugs": {
     "url": "https://github.com/felipefontoura/axi25/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

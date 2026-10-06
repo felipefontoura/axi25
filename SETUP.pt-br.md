@@ -67,7 +67,7 @@ Seu cofre é uma pasta de arquivos. Faça backup como você faria com qualquer p
 **Comando facilitado** — na pasta do vault, rode:
 
 ```bash
-npx axi25 doctor
+npx @axi25/vault doctor
 ```
 
 Ele checa seu ambiente (quais CLIs você tem) e imprime **o próximo passo exato**. Sem terminal? Não
@@ -85,7 +85,7 @@ Todos leem o `AGENTS.md` (a constituição). Aprofundamento em **[`docs/`](docs/
 técnicas → implementação). Precisa instalar o CLI de algum deles? Peça no chat: **"check my setup"**
 — a skill `axi25-doctor` detecta e instala pra você, com consentimento.
 
-> Instalação via **npm** (opcional): `npx axi25 init meu-vault` monta um cofre
+> Instalação via **npm** (opcional): `npx @axi25/vault init meu-vault` monta um cofre
 > completo do zero em qualquer pasta.
 
 ---

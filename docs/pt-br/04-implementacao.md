@@ -129,7 +129,7 @@ degrada com elegância: até um harness sem suporte a skills funciona lendo os a
 As skills chegam como duas pastas **reais**: `.agents/skills/` (canônica) e `.claude/skills/` (uma
 cópia). Nenhum symlink em lugar nenhum, então qualquer descompactador em qualquer SO — inclusive
 Windows — resulta num vault funcional, com zero setup. O `.bin/install.sh` / `.bin/install.ps1` /
-`npx axi25 wire` só re-sincronizam a cópia `.claude/skills` depois de você editar
+`npx @axi25/vault wire` só re-sincronizam a cópia `.claude/skills` depois de você editar
 `.agents/skills`; o usuário leigo nunca os roda.
 
 ## Backups & histórico de versões

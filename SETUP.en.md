@@ -65,7 +65,7 @@ Your vault is a folder of files. Back it up like any folder that matters.
 **Facilitated command** — from the vault folder, run:
 
 ```bash
-npx axi25 doctor
+npx @axi25/vault doctor
 ```
 
 It checks your environment (which CLIs you have) and prints **the exact next step**. Either way,
@@ -83,7 +83,7 @@ All read `AGENTS.md` (the constitution). Go deeper in **[`docs/`](docs/)** (phil
 → implementation). Need to install one of their CLIs? Ask in chat: **"check my setup"** — the
 `axi25-doctor` skill detects and installs it for you, with consent.
 
-> **npm** install (optional): `npx axi25 init my-vault` scaffolds a complete vault
+> **npm** install (optional): `npx @axi25/vault init my-vault` scaffolds a complete vault
 > from scratch in any folder.
 
 ---

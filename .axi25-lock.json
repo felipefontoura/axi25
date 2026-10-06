@@ -1,11 +1,11 @@
 {
   "core": "@axi25/core",
   "source": "submodule",
-  "version": "2.0.0",
-  "wiredAt": "2026-07-23T21:08:55.367Z",
+  "version": "2.0.1",
+  "wiredAt": "2026-10-06T21:24:36.862Z",
   "projections": {
-    ".agents/skills": "sha256:e92498d76f9f280367af97bebcf0b79fc3418d35abb07e65b06a9221a4c553fd",
-    ".claude/skills": "sha256:e92498d76f9f280367af97bebcf0b79fc3418d35abb07e65b06a9221a4c553fd",
+    ".agents/skills": "sha256:9958069c65fc2ff9e85b45d2e9f9aa273f5211d1444b1c854abc78131f3faefb",
+    ".claude/skills": "sha256:9958069c65fc2ff9e85b45d2e9f9aa273f5211d1444b1c854abc78131f3faefb",
     "AGENTS.md": "sha256:dd882ab04a778130835c4b1cf97bc90a35af502df442e3a5b449ecfa4a63e304",
     "90-system/references/axi25-definition.md": "sha256:2d352f60e5f1580d95d269fa142c12ee724f64d2213ed0ae8db2d16389f72291",
     "90-system/references/operations.md": "sha256:db504db3c6c92d65c475318fa19416f28019bae913568e2d53ff9ae0465e13fb",

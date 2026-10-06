@@ -10,7 +10,7 @@ As skills são pastas reais, então todo agente suportado as descobre sem config
 cofre:
 
 ```bash
-npx axi25 doctor    # checa seu ambiente e imprime o próximo passo exato
+npx @axi25/vault doctor    # checa seu ambiente e imprime o próximo passo exato
 ```
 
 | Harness | Início | Lê skills de |
@@ -26,9 +26,9 @@ Todos leem o `AGENTS.md` (a constituição). Falta um CLI? Peça no chat: **"che
 ## A CLI
 
 ```bash
-npx axi25 doctor [dir]   # checagem de ambiente + próximo passo
-npx axi25 init [dir]     # monta um cofre completo do zero (qualquer pasta vazia)
-npx axi25 wire [dir]     # re-sincroniza a cópia .claude/skills a partir de .agents/skills
+npx @axi25/vault doctor [dir]   # checagem de ambiente + próximo passo
+npx @axi25/vault init [dir]     # monta um cofre completo do zero (qualquer pasta vazia)
+npx @axi25/vault wire [dir]     # re-sincroniza a cópia .claude/skills a partir de .agents/skills
 ```
 
 O `init` funciona até do nada: constrói a árvore de pastas, os arquivos de referência e as duas
@@ -37,7 +37,7 @@ pastas de skills — o cofre se auto-cura (veja `AGENTS.md` § Self-healing envi
 ## Estenda o sistema
 
 - **Adicionar uma skill:** crie `.agents/skills/<nome>/SKILL.md` com frontmatter `name` +
-  `description` e as instruções, depois rode `npx axi25 wire` para copiá-la em
+  `description` e as instruções, depois rode `npx @axi25/vault wire` para copiá-la em
   `.claude/skills`. Ela dispara por linguagem natural assim que sua descrição for descoberta;
   adicione uma linha em `AGENTS.md` § Skills Reference para o roteador conhecê-la.
 - **Adicionar uma área da vida:** crie `20-wiki/areas/<area>.md` a partir do template de Área em
