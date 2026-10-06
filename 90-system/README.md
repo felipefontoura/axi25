@@ -10,7 +10,10 @@ The machine room. Nothing here is "knowledge" — it is how AXI25 runs.
   - `operations.md` — condensed reference for each operation
   - `axi25-definition.md` — the canonical definition / north star
 - `prompts/` — reusable prompt templates you want to keep
-- `scripts/` — small shell helpers (optional)
+- `scripts/` — zero-token checks you can run on every commit:
+  - `check_quotes.py` — checks every timestamped quote in `20-wiki/` against the transcript its page cites (`source_path`). Exits 1 if a quote can't be found.
+  - `wiki_lint.py` — dangling `[[links]]` and orphan pages. Exits 1 if it finds any.
+  - Run them from the vault root: `python3 90-system/scripts/check_quotes.py .`
 
 ## What does NOT belong here
 
